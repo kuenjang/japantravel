@@ -364,6 +364,14 @@ export function TripItinerary() {
             <MapPin className="h-5 w-5 text-amber-600" />
             旅遊路線圖
           </h2>
+          <div className="mt-4 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+            <img
+              src="/images/chubu-route-map.png"
+              alt="日本中部與北陸旅遊路線圖"
+              className="h-auto w-full object-cover"
+              loading="lazy"
+            />
+          </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
             {routeCities.map((city, idx) => (
               <div key={city} className="flex items-center gap-2">
