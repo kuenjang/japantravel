@@ -442,6 +442,24 @@ export function TripItinerary() {
                       <p className="mt-1 text-sm leading-relaxed text-stone-600">
                         {app.desc}
                       </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        <a
+                          href={app.iosUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:bg-slate-100"
+                        >
+                          iOS 下載
+                        </a>
+                        <a
+                          href={app.androidUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 transition hover:bg-emerald-100"
+                        >
+                          Android 下載
+                        </a>
+                      </div>
                     </div>
                   ))}
                 </div>

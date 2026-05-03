@@ -612,7 +612,12 @@ export const travelNotes: { title: string; body: string }[] = [
   },
 ];
 
-export type AppItem = { name: string; desc: string };
+export type AppItem = {
+  name: string;
+  desc: string;
+  iosUrl: string;
+  androidUrl: string;
+};
 
 export type AppCategory = { title: string; items: AppItem[] };
 
@@ -623,37 +628,78 @@ export const appCategories: AppCategory[] = [
       {
         name: "乘換案內",
         desc: "查詢最佳路線、費用、時間。支援 JR、地下鐵、新幹線、巴士、飛機等",
+        iosUrl:
+          "https://apps.apple.com/tw/search?term=%E4%B9%97%E6%8F%9B%E6%A1%88%E5%85%A7",
+        androidUrl:
+          "https://play.google.com/store/search?q=%E4%B9%97%E6%8F%9B%E6%A1%88%E5%85%A7&c=apps",
       },
       {
         name: "乘換 NAVITIME",
         desc: "轉乘資訊、時刻表、車站站內圖。無料版可查優惠券適用路線",
+        iosUrl:
+          "https://apps.apple.com/tw/search?term=%E4%B9%97%E6%8F%9B%20NAVITIME",
+        androidUrl:
+          "https://play.google.com/store/search?q=%E4%B9%97%E6%8F%9B%20NAVITIME&c=apps",
       },
       {
         name: "GO",
         desc: "日本使用率第一的叫車 APP。下雨天或大包小包時的最佳選擇",
+        iosUrl: "https://apps.apple.com/tw/search?term=GO%20taxi%20japan",
+        androidUrl:
+          "https://play.google.com/store/search?q=GO%20taxi%20japan&c=apps",
       },
     ],
   },
   {
     title: "語言系 APP",
     items: [
-      { name: "Google 翻譯", desc: "拍照翻譯、對話翻譯。支援自動偵測語言" },
+      {
+        name: "Google 翻譯",
+        desc: "拍照翻譯、對話翻譯。支援自動偵測語言",
+        iosUrl: "https://apps.apple.com/tw/search?term=Google%20Translate",
+        androidUrl:
+          "https://play.google.com/store/search?q=Google%20Translate&c=apps",
+      },
       {
         name: "VoiceTra",
         desc: "日本官方即時翻譯 APP，支援 33 國語言",
+        iosUrl: "https://apps.apple.com/tw/search?term=VoiceTra",
+        androidUrl: "https://play.google.com/store/search?q=VoiceTra&c=apps",
       },
       {
         name: "Payke",
         desc: "掃描商品條碼查看介紹，藥妝、零食購物必備",
+        iosUrl: "https://apps.apple.com/tw/search?term=Payke",
+        androidUrl: "https://play.google.com/store/search?q=Payke&c=apps",
       },
-      { name: "Suica", desc: "手機版交通 IC 卡＋電子支付" },
+      {
+        name: "Suica",
+        desc: "手機版交通 IC 卡＋電子支付",
+        iosUrl: "https://apps.apple.com/tw/search?term=Mobile%20Suica",
+        androidUrl:
+          "https://play.google.com/store/search?q=Mobile%20Suica&c=apps",
+      },
     ],
   },
   {
     title: "美食系 APP",
     items: [
-      { name: "食べログ", desc: "日本最多人用的餐廳評價 APP" },
-      { name: "ぐるなび", desc: "與樂天合作，消費可累積樂天點數" },
+      {
+        name: "食べログ",
+        desc: "日本最多人用的餐廳評價 APP",
+        iosUrl:
+          "https://apps.apple.com/tw/search?term=%E9%A3%9F%E3%81%B9%E3%83%AD%E3%82%B0",
+        androidUrl:
+          "https://play.google.com/store/search?q=%E9%A3%9F%E3%81%B9%E3%83%AD%E3%82%B0&c=apps",
+      },
+      {
+        name: "ぐるなび",
+        desc: "與樂天合作，消費可累積樂天點數",
+        iosUrl:
+          "https://apps.apple.com/tw/search?term=%E3%81%90%E3%82%8B%E3%81%AA%E3%81%B3",
+        androidUrl:
+          "https://play.google.com/store/search?q=%E3%81%90%E3%82%8B%E3%81%AA%E3%81%B3&c=apps",
+      },
     ],
   },
   {
@@ -662,14 +708,22 @@ export const appCategories: AppCategory[] = [
       {
         name: "ecbo cloak",
         desc: "咖啡廳、郵局等店鋪寄物。信用卡付款",
+        iosUrl: "https://apps.apple.com/tw/search?term=ecbo%20cloak",
+        androidUrl:
+          "https://play.google.com/store/search?q=ecbo%20cloak&c=apps",
       },
       {
         name: "Charge Spot",
         desc: "行動電源出租，多據點可還",
+        iosUrl: "https://apps.apple.com/tw/search?term=ChargeSPOT",
+        androidUrl:
+          "https://play.google.com/store/search?q=ChargeSPOT&c=apps",
       },
       {
         name: "tenki.JP",
         desc: "日本氣象協會官方 APP，精準到小時級預報",
+        iosUrl: "https://apps.apple.com/tw/search?term=tenki.jp",
+        androidUrl: "https://play.google.com/store/search?q=tenki.jp&c=apps",
       },
     ],
   },
