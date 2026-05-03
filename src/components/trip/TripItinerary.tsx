@@ -321,28 +321,39 @@ export function TripItinerary() {
   return (
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-50 via-stone-50 to-sky-50/60">
       <div className="mx-auto max-w-3xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pt-14">
-        <header className="text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-900/70 shadow-sm">
-            <Sparkles className="h-3.5 w-3.5" />
-            日本中部・北陸 7天6夜旅遊行程
-          </p>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
-            {tripMeta.title}
-          </h1>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-semibold text-amber-900 shadow-sm ring-1 ring-amber-100">
-              {tripMeta.duration}
-            </span>
-            <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-stone-700 shadow-sm ring-1 ring-stone-200/80">
-              {tripMeta.dateRange}
-            </span>
-            <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-stone-700 shadow-sm ring-1 ring-stone-200/80">
-              {tripMeta.cityCount}
-            </span>
+        <header className="relative overflow-hidden rounded-3xl border border-white/70 text-center shadow-xl ring-1 ring-amber-100/70">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/japan-hero.png')" }}
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/65 to-white/90"
+            aria-hidden
+          />
+          <div className="relative px-4 py-12 sm:px-8 sm:py-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-900/80 shadow-sm backdrop-blur-sm">
+              <Sparkles className="h-3.5 w-3.5" />
+              日本中部・北陸 7天6夜旅遊行程
+            </p>
+            <h1 className="mt-6 text-4xl font-bold tracking-tight text-stone-900 drop-shadow-sm sm:text-5xl">
+              {tripMeta.title}
+            </h1>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+              <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-semibold text-amber-900 shadow-sm ring-1 ring-amber-100">
+                {tripMeta.duration}
+              </span>
+              <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-stone-700 shadow-sm ring-1 ring-stone-200/80">
+                {tripMeta.dateRange}
+              </span>
+              <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-stone-700 shadow-sm ring-1 ring-stone-200/80">
+                {tripMeta.cityCount}
+              </span>
+            </div>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-700 sm:text-lg">
+              {tripMeta.subtitle}
+            </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg">
-            {tripMeta.subtitle}
-          </p>
         </header>
 
         <section className="mt-14" aria-labelledby="route-heading">
