@@ -47,11 +47,13 @@ export type JrPassNight = {
 };
 
 export type MiniRouteStep = { emoji: string; title: string; desc: string };
+export type TripImage = { src: string; alt: string; caption?: string };
 
 export type TripDayBlock =
   | { kind: "schedule"; items: ScheduleItem[] }
   | { kind: "jrPass"; data: JrPassNight }
   | { kind: "routeMini"; title: string; steps: MiniRouteStep[]; footnote?: string }
+  | { kind: "imageGallery"; title: string; images: TripImage[] }
   | { kind: "note"; emoji?: string; title: string; lines: string[] }
   | { kind: "twoColumnPlans"; titleA: string; titleB: string; bodyA: string[]; bodyB: string[] }
   | { kind: "appsHint"; lines: string[] };
@@ -375,6 +377,22 @@ export const days: TripDay[] = [
         ],
         footnote:
           "從大正池開始，沿著梓川左岸步道步行至田代池，再繼續前往河童橋。全程約 3.5 公里，步行時間約 1.5 小時。沿途可欣賞北阿爾卑斯的壯麗山景與清澈溪流。",
+      },
+      {
+        kind: "imageGallery",
+        title: "高山站轉乘參考圖",
+        images: [
+          {
+            src: "/images/takayama-bus-center-guide.png",
+            alt: "JR 高山站東口到高山濃飛巴士中心步行指引圖",
+            caption: "JR 高山站東口步行至高山濃飛巴士中心",
+          },
+          {
+            src: "/images/takayama-kamikochi-flow.png",
+            alt: "從高山前往上高地交通流程圖",
+            caption: "高山站 → 平湯溫泉 → 上高地轉乘流程",
+          },
+        ],
       },
       {
         kind: "note",

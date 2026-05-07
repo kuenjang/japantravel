@@ -18,6 +18,7 @@ import {
   type JrPassNight,
   type MiniRouteStep,
   type ScheduleItem,
+  type TripImage,
   type TripDay,
   type TripDayBlock,
 } from "@/data/chubu-trip";
@@ -203,6 +204,35 @@ function TwoPlans({
   );
 }
 
+function ImageGallery({
+  title,
+  images,
+}: {
+  title: string;
+  images: TripImage[];
+}) {
+  return (
+    <div className="rounded-2xl border border-stone-200/80 bg-white/90 p-5 shadow-sm">
+      <h4 className="text-base font-semibold text-stone-900">{title}</h4>
+      <div className="mt-4 grid gap-4">
+        {images.map((image) => (
+          <figure
+            key={image.src}
+            className="overflow-hidden rounded-xl border border-stone-200 bg-stone-50"
+          >
+            <img src={image.src} alt={image.alt} className="h-auto w-full" loading="lazy" />
+            {image.caption ? (
+              <figcaption className="border-t border-stone-200 bg-white px-3 py-2 text-xs text-stone-600">
+                {image.caption}
+              </figcaption>
+            ) : null}
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function BlockRenderer({ block }: { block: TripDayBlock }): ReactNode {
   switch (block.kind) {
     case "schedule":
@@ -226,6 +256,8 @@ function BlockRenderer({ block }: { block: TripDayBlock }): ReactNode {
           bodyB={block.bodyB}
         />
       );
+    case "imageGallery":
+      return <ImageGallery title={block.title} images={block.images} />;
     case "note":
       return (
         <div className="rounded-2xl border border-stone-200 bg-stone-50/80 px-5 py-4">
