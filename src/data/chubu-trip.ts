@@ -147,13 +147,10 @@ export const jrPassNight: JrPassNight = {
     "尋求協助：5/11 當晚如果怕操作錯誤，名古屋站通常會有穿制服的引導員在機器旁",
     "翁大哥的手機：既然這晚要處理交通票券，可以順便檢查翁大哥在車站 Wi-Fi 環境下，eSIM 的安裝進度是否順利",
   ],
-  checklist: [
-    "領取 JR Pass 周遊券",
-    "預訂 5 段指定席（分兩批 6+3）",
-    "確認「特大行李放置處附帶席」已勾選",
-    "檢查翁大哥 eSIM 安裝進度",
-    "準備好 9 本護照正本",
-  ],
+
+
+
+
 };
 
 export const days: TripDay[] = [
@@ -221,12 +218,6 @@ export const days: TripDay[] = [
         emoji: "💡",
         title: "給主揪的貼心建議",
         lines: jrPassNight.tips,
-      },
-      {
-        kind: "note",
-        emoji: "✅",
-        title: "當晚待辦事項檢查清單",
-        lines: jrPassNight.checklist,
       },
     ],
     accommodation: {
