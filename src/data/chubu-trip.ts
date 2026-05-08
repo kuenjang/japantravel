@@ -202,9 +202,9 @@ export const days: TripDay[] = [
         data: {
           hotel: "三井花園飯店名古屋普米爾（Mitsui Garden Hotel Nagoya Premier）",
           orderIds: [
-            "1616325000953951",
-            "1616325000861101",
-            "1616325000914171",
+            "1616325000861101 (WU YEN CHING, HSIAO SHU YA, CHIU HUEI YIN)",
+            "1616325000914171 (CHEN WEN HUI, CHIU PO SZ)",
+            "1616325000953951 (CHENG KUN CHANG, WENG FAN FU, WU MEI CHIH, WU PI LING)",
           ],
           note: "入住時間：5 月 11 日",
         },
