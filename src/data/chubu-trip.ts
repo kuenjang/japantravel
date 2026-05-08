@@ -296,14 +296,19 @@ export const days: TripDay[] = [
         kind: "booking",
         data: {
           hotel: "名鐵大飯店（Meitetsu Grand Hotel）",
-          orderId: "1616329174987500",
+          orders: [
+            { id: "1616328682903096", passengers: "HSIAO SHU YA, CHIU HUEI YIN, CHEN WEN HUI" },
+            { id: "1616328683049359", passengers: "CHIU PO SZ, WU YEN CHING" },
+            { id: "1616329174987500", passengers: "CHENG KUN CHANG, WENG FAN FU" },
+            { id: "1616329232285949", passengers: "WU PI LING, WU MEI CHIH" },
+          ],
           note: "入住時間：5 月 12 日開始",
         },
       },
     ],
     accommodation: { name: "名鐵大飯店（Meitetsu Grand Hotel）" },
     footerNote:
-      "訂單編號：1616329174987500。9 人團體行程，包含往返接送與行李運送服務。建議比集合時間早 15 分鐘抵達，以免在巨大的名古屋車站內迷路。",
+      "包含往返接送與行李運送服務。建議比集合時間早 15 分鐘抵達，以免在巨大的名古屋車站內迷路。",
   },
   {
     day: 3,
