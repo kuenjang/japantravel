@@ -36,6 +36,14 @@ export type ReserveRow = {
   timeNote: string;
 };
 
+export type BookingInfo = {
+  hotel: string;
+  orderId?: string;
+  orderIds?: string[];
+  pinCode?: string;
+  note?: string;
+};
+
 export type JrPassNight = {
   title: string;
   intro: string;
@@ -56,6 +64,7 @@ export type TripDayBlock =
   | { kind: "imageGallery"; title: string; images: TripImage[] }
   | { kind: "note"; emoji?: string; title: string; lines: string[] }
   | { kind: "twoColumnPlans"; titleA: string; titleB: string; bodyA: string[]; bodyB: string[] }
+  | { kind: "booking"; data: BookingInfo }
   | { kind: "appsHint"; lines: string[] };
 
 export type TripDay = {
@@ -188,6 +197,18 @@ export const days: TripDay[] = [
           },
         ],
       },
+      {
+        kind: "booking",
+        data: {
+          hotel: "三井花園飯店名古屋普米爾（Mitsui Garden Hotel Nagoya Premier）",
+          orderIds: [
+            "1616325000953951",
+            "1616325000861101",
+            "1616325000914171",
+          ],
+          note: "入住時間：5 月 11 日",
+        },
+      },
       { kind: "jrPass", data: jrPassNight },
       {
         kind: "note",
@@ -265,10 +286,18 @@ export const days: TripDay[] = [
           },
         ],
       },
+      {
+        kind: "booking",
+        data: {
+          hotel: "名鐵大飯店（Meitetsu Grand Hotel）",
+          orderId: "1616329174987500",
+          note: "入住時間：5 月 12 日開始",
+        },
+      },
     ],
     accommodation: { name: "名鐵大飯店（Meitetsu Grand Hotel）" },
     footerNote:
-      "訂單編號：1616330365061725。9 人團體行程，包含往返接送與行李運送服務。建議比集合時間早 15 分鐘抵達，以免在巨大的名古屋車站內迷路。",
+      "訂單編號：1616329174987500。9 人團體行程，包含往返接送與行李運送服務。建議比集合時間早 15 分鐘抵達，以免在巨大的名古屋車站內迷路。",
   },
   {
     day: 3,

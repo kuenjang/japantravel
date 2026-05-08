@@ -5,6 +5,7 @@ import {
   Map,
   MapPin,
   Sparkles,
+  Ticket,
   Train,
 } from "lucide-react";
 import type { ReactNode } from "react";
@@ -21,6 +22,7 @@ import {
   type TripImage,
   type TripDay,
   type TripDayBlock,
+  type BookingInfo,
 } from "@/data/chubu-trip";
 
 function ScheduleList({ items }: { items: ScheduleItem[] }) {
@@ -233,6 +235,62 @@ function ImageGallery({
   );
 }
 
+function BookingCard({ data }: { data: BookingInfo }) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-indigo-200/80 bg-gradient-to-br from-indigo-50 via-white to-sky-50/60 shadow-sm ring-1 ring-indigo-100">
+      <div className="border-b border-indigo-100 bg-indigo-500/10 px-5 py-4">
+        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-900/70">
+          訂房確認
+        </p>
+        <h3 className="mt-1 flex items-center gap-2 text-lg font-bold text-indigo-950">
+          <Building2 className="h-5 w-5 text-indigo-600" />
+          {data.hotel}
+        </h3>
+      </div>
+      <div className="grid gap-4 px-5 py-5 sm:grid-cols-2">
+        <div className="rounded-xl border border-indigo-50 bg-white/80 p-4">
+          <div className="flex items-center gap-2 text-xs font-medium text-indigo-900/60">
+            <Ticket className="h-3.5 w-3.5" />
+            訂單編號
+          </div>
+          <div className="mt-2 space-y-2">
+            {data.orderIds ? (
+              data.orderIds.map((id) => (
+                <div key={id} className="font-mono text-sm font-bold text-indigo-950 sm:text-base">
+                  {id}
+                </div>
+              ))
+            ) : (
+              <div className="font-mono text-lg font-bold text-indigo-950">
+                {data.orderId}
+              </div>
+            )}
+          </div>
+        </div>
+        {data.pinCode && (
+          <div className="rounded-xl border border-amber-50 bg-white/80 p-4">
+            <div className="flex items-center gap-2 text-xs font-medium text-amber-900/60">
+              <span className="text-sm">🔑</span>
+              PIN 碼
+            </div>
+            <div className="mt-1 font-mono text-lg font-bold text-amber-600">
+              {data.pinCode}
+            </div>
+          </div>
+        )}
+      </div>
+      {data.note && (
+        <div className="border-t border-indigo-50 bg-indigo-50/30 px-5 py-3">
+          <p className="text-xs text-indigo-900/70">
+            <span className="mr-1.5 font-bold">備註:</span>
+            {data.note}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function BlockRenderer({ block }: { block: TripDayBlock }): ReactNode {
   switch (block.kind) {
     case "schedule":
@@ -277,6 +335,8 @@ function BlockRenderer({ block }: { block: TripDayBlock }): ReactNode {
           ) : null}
         </div>
       );
+    case "booking":
+      return <BookingCard data={block.data} />;
     case "appsHint":
       return (
         <div className="rounded-2xl border border-amber-100 bg-amber-50/60 px-5 py-4 text-sm leading-relaxed text-amber-950/85">
