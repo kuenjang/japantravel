@@ -443,10 +443,23 @@ export const days: TripDay[] = [
       {
         kind: "appsHint",
         lines: [
-          "午餐備案：上高地餐廳在下午 2 點後可能部分休息，建議在名古屋車站或高山車站先買個飯糰或簡單輕食帶在身上。",
+          "午餐備案：上高地餐廳在下午 2 點後可能部分休息，建議在名古屋車站或高山車站先買個飯糰 or 簡單輕食帶在身上。",
           "保暖服裝：5 月的上高地仍有殘雪，氣溫即使在大晴天也可能只有 8-12 度。",
           "巴士時刻：5 月是旺季，下山的巴士班次有時需要拿「乘車整理券」。",
         ],
+      },
+      {
+        kind: "booking",
+        data: {
+          hotel: "飛驒高山華盛頓廣場飯店（Washington Hotel Plaza Takayama）",
+          orders: [
+            {
+              id: "1616329173218576",
+              passengers: "CHIU PO SZ, WU YEN CHING, CHENG KUN CHANG, WENG FAN FU, WU PI LING, WU MEI CHIH, HSIAO SHU YA, CHIU HUEI YIN, CHEN WEN HUI",
+            },
+          ],
+          note: "入住時間：5 月 13 日",
+        },
       },
     ],
     accommodation: { name: "飛驒高山華盛頓廣場飯店（Washington Hotel Plaza Takayama）" },
