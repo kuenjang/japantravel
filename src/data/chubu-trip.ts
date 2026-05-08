@@ -502,6 +502,18 @@ export const days: TripDay[] = [
           "5/11 領票時若發現巴士滿位，就直接改採方案 B。",
         ],
       },
+      {
+        kind: "booking",
+        data: {
+          hotel: "金澤托裡菲託飯店（Hotel Torifito Kanazawa）",
+          orders: [
+            { id: "1616328784448933", passengers: "WU MEI CHIH, WU PI LING, WU YEN CHING, CHIU PO SZ" },
+            { id: "1616328784382400", passengers: "HSIAO SHU YA, CHEN WEN HUI, CHIU HUEI YIN" },
+            { id: "1616328784382390", passengers: "WENG FAN FU, CHENG KUN CHANG" },
+          ],
+          note: "入住時間：5 月 14 日",
+        },
+      },
     ],
     accommodation: { name: "金澤托裡菲託飯店（Hotel Torifito Kanazawa）" },
     footerNote:
