@@ -129,6 +129,19 @@ function JrPassCard({ data }: { data: JrPassNight }) {
           ))}
         </ul>
       </div>
+      <div className="space-y-4 border-t border-orange-100 bg-white/30 px-5 py-5">
+        <h4 className="text-sm font-semibold text-stone-800">
+          執行前核對項目
+        </h4>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {data.checklist.map((item) => (
+            <div key={item} className="flex items-center gap-2 rounded-lg bg-white/60 px-3 py-2 text-sm text-stone-700 shadow-sm ring-1 ring-stone-100">
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-orange-500" />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
