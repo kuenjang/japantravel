@@ -222,7 +222,6 @@ export const days: TripDay[] = [
         title: "給主揪的貼心建議",
         lines: jrPassNight.tips,
       },
-      },
     ],
     accommodation: {
       name: "三井花園飯店名古屋普米爾（三井ガーデンホテル名古屋プレミア）",
