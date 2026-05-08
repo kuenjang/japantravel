@@ -253,8 +253,22 @@ function BookingCard({ data }: { data: BookingInfo }) {
             <Ticket className="h-3.5 w-3.5" />
             訂單編號
           </div>
-          <div className="mt-2 space-y-2">
-            {data.orderIds ? (
+          <div className="mt-2 space-y-4">
+            {data.orders ? (
+              data.orders.map((order) => (
+                <div key={order.id} className="border-b border-indigo-50/50 pb-3 last:border-0 last:pb-0">
+                  <div className="font-mono text-sm font-bold text-indigo-950 sm:text-base">
+                    {order.id}
+                  </div>
+                  {order.passengers && (
+                    <div className="mt-1 flex items-start gap-1.5 text-xs text-indigo-700/70">
+                      <span className="mt-0.5 inline-block h-1 w-1 shrink-0 rounded-full bg-indigo-300" />
+                      <span className="leading-relaxed">{order.passengers}</span>
+                    </div>
+                  )}
+                </div>
+              ))
+            ) : data.orderIds ? (
               data.orderIds.map((id) => (
                 <div key={id} className="font-mono text-sm font-bold text-indigo-950 sm:text-base">
                   {id}

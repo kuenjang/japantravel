@@ -36,10 +36,16 @@ export type ReserveRow = {
   timeNote: string;
 };
 
+export type OrderItem = {
+  id: string;
+  passengers?: string;
+};
+
 export type BookingInfo = {
   hotel: string;
   orderId?: string;
   orderIds?: string[];
+  orders?: OrderItem[];
   pinCode?: string;
   note?: string;
 };
@@ -201,10 +207,10 @@ export const days: TripDay[] = [
         kind: "booking",
         data: {
           hotel: "三井花園飯店名古屋普米爾（Mitsui Garden Hotel Nagoya Premier）",
-          orderIds: [
-            "1616325000861101 (WU YEN CHING, HSIAO SHU YA, CHIU HUEI YIN)",
-            "1616325000914171 (CHEN WEN HUI, CHIU PO SZ)",
-            "1616325000953951 (CHENG KUN CHANG, WENG FAN FU, WU MEI CHIH, WU PI LING)",
+          orders: [
+            { id: "1616325000861101", passengers: "WU YEN CHING, HSIAO SHU YA, CHIU HUEI YIN" },
+            { id: "1616325000914171", passengers: "CHEN WEN HUI, CHIU PO SZ" },
+            { id: "1616325000953951", passengers: "CHENG KUN CHANG, WENG FAN FU, WU MEI CHIH, WU PI LING" },
           ],
           note: "入住時間：5 月 11 日",
         },
