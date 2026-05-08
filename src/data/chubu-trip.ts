@@ -222,11 +222,6 @@ export const days: TripDay[] = [
         title: "給主揪的貼心建議",
         lines: jrPassNight.tips,
       },
-      {
-        kind: "note",
-        emoji: "✅",
-        title: "當晚待辦事項檢查清單",
-        lines: jrPassNight.checklist,
       },
     ],
     accommodation: {
